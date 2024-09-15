@@ -23,8 +23,8 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(final HttpSecurity httpSecurity) throws Exception {
 		httpSecurity
-				.authorizeHttpRequests(
-						customizer -> customizer.requestMatchers("/auth/**").permitAll().anyRequest().authenticated())
+				.authorizeHttpRequests(customizer -> customizer
+						.requestMatchers("/auth/**", "/test/**").permitAll().anyRequest().authenticated())
 				.csrf(AbstractHttpConfigurer::disable)
 				.sessionManagement(sessionManagementConfigurer -> sessionManagementConfigurer
 						.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
