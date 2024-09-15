@@ -1,14 +1,5 @@
 version: 0.2
 
-env:
-  variables:
-    DB_HOST_URL: "jdbc:postgresql://postgres-spring.c5uqyi884b2w.ap-south-1.rds.amazonaws.com:5432/postgres"
-    DB_USERNAME: "postgres"
-    DB_PASSWORD: "#70416DJd"
-    DOCKER_USERNAME: "devanshu1309"
-    DOCKER_PASSWORD: "#70416DJd"
-
-
 phases:
   install:
     runtime-versions:
