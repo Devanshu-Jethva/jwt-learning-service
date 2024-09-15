@@ -1,0 +1,71 @@
+spring: 
+  profiles:
+    active:
+    - prod
+  application:
+    name: jwt-security
+server:
+  servlet:
+    context-path: /jwt-security
+    
+---
+    
+spring:
+  config:
+    activate:
+      on-profile: prod
+      
+  datasource:
+    url: ${DB_HOST_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true  
+    format-sql: true  
+
+jwt: 
+  secret: wert;ltrew234567yresxcgty7890654#$%^&**567
+  
+---
+    
+spring:
+  config:
+    activate:
+      on-profile: dev
+      
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwt-week5
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true  
+    format-sql: true  
+
+jwt: 
+  secret: wert;ltrew234567yresxcgty7890654#$%^&**567
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
